@@ -4,8 +4,8 @@ import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-
   const app = await NestFactory.create(AppModule);
+
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
@@ -23,7 +23,7 @@ async function bootstrap() {
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.js',
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.js',
     ],
-  });
+});
 
   await app.listen(3000);
 }
